@@ -8,7 +8,7 @@ import {FormControl, FormGroup} from '@angular/forms';
 })
 export class PostComponent implements OnInit {
   editorForm: FormGroup;
-
+  htmlContent = null;
   constructor() {
   }
 
@@ -19,7 +19,8 @@ export class PostComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('clicked');
+    this.htmlContent = this.editorForm.get('editor').value;
+    console.log(this.htmlContent);
   }
 
 }
