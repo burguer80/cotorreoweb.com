@@ -1,0 +1,33 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedTopGap="56">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a [routerLink]="['/home']" href="#" mat-list-item>Inicio</a>
+      <a [routerLink]="['/posts']" href="#" mat-list-item>Tutoriales</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        type="button">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <img alt="Logo CotorreoWeb" class="logo" height="30" src="../../../../assets/images/logo_black.svg"
+           width="30">
+      <div (click)="goHome()">
+        Cotorreo<strong>WEB</strong>
+      </div>
+      <span class="fill-remaining-space"></span>
+      <mat-nav-list fxHide.lt-sm fxLayout="row">
+        <a [routerLink]="['/home']" href="#" mat-list-item>Inicio</a>
+        <a [routerLink]="['/posts']" href="#" mat-list-item>Tutoriales</a>
+      </mat-nav-list>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

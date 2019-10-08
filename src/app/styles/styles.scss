@@ -1,0 +1,36 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+// Custom themes
+@import 'themes/light';
+@include angular-material-theme($light-theme);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+mat-divider {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.container {
+  padding: 30px;
+  width: 100%;
+}
+
+
+
+
