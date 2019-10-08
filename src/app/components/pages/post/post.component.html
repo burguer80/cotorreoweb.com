@@ -1,83 +1,18 @@
 <div fxLayout="row wrap">
+
   <h1 class="mat-display-1" fxFlex="100%">Instalación de Dokku en DigitalOcean</h1>
   <div class="post-body" fxFlex="1 1 70%" fxFlex.lt-sm="100%" fxFlexOrder="1" fxFlexOrder.lt-sm="2" fxLayout="column">
-    <h1 class="mat-headline">1. One</h1>
-    <p class="mat-body-1">Lorem ipsum dolor amet prism PBR&B ennui swag crucifix twee. Wayfarers tilde actually af
-      artisan freegan you probably haven't heard of them butcher franzen distillery offal tote bag plaid. Plaid squid
-      yuccie normcore. Sustainable unicorn affogato, paleo lo-fi vinyl tattooed man braid iceland green juice taxidermy
-      hexagon aesthetic mumblecore venmo. Raw denim gastropub tbh artisan fam affogato mustache actually schlitz trust
-      fund man bun iPhone synth. Hashtag chillwave enamel pin cold-pressed photo booth meggings, 8-bit leggings
-      aesthetic schlitz. Mumblecore direct trade tousled flexitarian 8-bit swag brunch. Paleo post-ironic cloud bread af
-      twee, pour-over kitsch activated charcoal before they sold out vexillologist chambray ennui blog beard. Freegan
-      fam raclette drinking vinegar, roof party YOLO cornhole semiotics XOXO portland listicle affogato four dollar
-      toast locavore poutine. Vaporware dreamcatcher green juice wayfarers portland, hell of williamsburg 90's tattooed.
-      Ramps viral iceland, vinyl DIY wayfarers post-ironic man braid prism meggings photo booth knausgaard unicorn man
-      bun. Iceland hot chicken bicycle rights bespoke, taiyaki brunch unicorn. Selvage prism mlkshk everyday carry
-      street art.</p>
-    <pre class="code-snippet">
-          {{'\n #231213 \n ' + json.body}}
-      </pre>
+    <form (ngSubmit)="onSubmit()" [formGroup]="editorForm">
+      <h3>Editor</h3>
+      <p class="mat-body-1">Created on December 14 of 2019 by <a href="#">Sergio</a></p>
+      <mat-divider></mat-divider>
 
-    <h1 class="mat-headline">2. Two</h1>
-    <p class="mat-body-1">Lorem ipsum dolor amet prism PBR&B ennui swag crucifix twee. Wayfarers tilde actually af
-      aPBR&B ennui swag crucifix twee. Wayfarers tilde actually af aPBR&B ennui swag crucifix twee. Wayfarers tilde
-      actually af aPBR&B ennui swag crucifix twee. Wayfarers tilde actually af aPBR&B ennui swag crucifix twee.
-      Wayfarers tilde actually af aPBR&B ennui swag crucifix twee. Wayfarers tilde actually af aPBR&B ennui swag
-      crucifix twee. Wayfarers tilde actually af aPBR&B ennui swag crucifix twee. Wayfarers tilde actually af aPBR&B
-      ennui swag crucifix twee. Wayfarers tilde actually af aPBR&B ennui swag crucifix twee. Wayfarers tilde actually af
-      aPBR&B ennui swag crucifix twee. Wayfarers tilde actually af aPBR&B ennui swag crucifix twee. Wayfarers tilde
-      actually af artisan freegan you probably haven't heard of them butcher franzen distillery offal tote bag plaid.
-      Plaid squid yuccie normcore. Sustainable unicorn affogato, paleo lo-fi vinyl tattooed man braid iceland green
-      juice taxidermy hexagon aesthetic mumblecore venmo. Raw denim gastropub tbh artisan fam affogato mustache actually
-      schlitz trust fund man bun iPhone synth. Hashtag chillwave enamel pin cold-pressed photo booth meggings, 8-bit
-      leggings aesthetic schlitz. Mumblecore direct trade tousled flexitarian 8-bit swag brunch. Paleo post-ironic cloud
-      bread af twee, pour-over kitsch activated charcoal before they sold out vexillologist chambray ennui blog beard.
-      Freegan fam raclette drinking vinegar, roof party YOLO cornhole semiotics XOXO portland listicle affogato four
-      dollar toast locavore poutine. Vaporware dreamcatcher green juice wayfarers portland, hell of williamsburg 90's
-      tattooed. Ramps viral iceland, vinyl DIY wayfarers post-ironic man braid prism meggings photo booth knausgaard
-      unicorn man bun. Iceland hot chicken bicycle rights bespoke, taiyaki brunch unicorn. Selvage prism mlkshk everyday
-      carry street art.</p>
-    <p class="mat-body-1">Lorem ipsum dolor amet prism PBR&B ennui swag crucifix twee. Wayfarers tilde actually af
-      aPBR&B ennui swag crucifix twee. Wayfarers tilde actually af aPBR&B ennui swag crucifix twee. Wayfarers tilde
-      actually af aPBR&B ennui swag crucifix twee. Wayfarers tilde actually af aPBR&B ennui swag crucifix twee.
-      Wayfarers tilde actually af aPBR&B ennui swag crucifix twee. Wayfarers tilde actually af aPBR&B ennui swag
-      crucifix twee. Wayfarers tilde actually af aPBR&B ennui swag crucifix twee. Wayfarers tilde actually af aPBR&B
-      ennui swag crucifix twee. Wayfarers tilde actually af aPBR&B ennui swag crucifix twee. Wayfarers tilde actually af
-      aPBR&B ennui swag crucifix twee. Wayfarers tilde actually af aPBR&B ennui swag crucifix twee. Wayfarers tilde
-      actually af artisan freegan you probably haven't heard of them butcher franzen distillery offal tote bag plaid.
-      Plaid squid yuccie normcore. Sustainable unicorn affogato, paleo lo-fi vinyl tattooed man braid iceland green
-      juice taxidermy hexagon aesthetic mumblecore venmo. Raw denim gastropub tbh artisan fam affogato mustache actually
-      schlitz trust fund man bun iPhone synth. Hashtag chillwave enamel pin cold-pressed photo booth meggings, 8-bit
-      leggings aesthetic schlitz. Mumblecore direct trade tousled flexitarian 8-bit swag brunch. Paleo post-ironic cloud
-      bread af twee, pour-over kitsch activated charcoal before they sold out vexillologist chambray ennui blog beard.
-      Freegan fam raclette drinking vinegar, roof party YOLO cornhole semiotics XOXO portland listicle affogato four
-      dollar toast locavore poutine. Vaporware dreamcatcher green juice wayfarers portland, hell of williamsburg 90's
-      tattooed. Ramps viral iceland, vinyl DIY wayfarers post-ironic man braid prism meggings photo booth knausgaard
-      unicorn man bun. Iceland hot chicken bicycle rights bespoke, taiyaki brunch unicorn. Selvage prism mlkshk everyday
-      carry street art.</p>
+      <quill-editor formControlName="editor"></quill-editor>
 
-    <h1 class="mat-headline">3. Three</h1>
-    <p class="mat-body-1">Lorem ipsum dolor amet prism PBR&B ennui swag crucifix twee. Wayfarers tilde actually af
-      aPBR&B ennui swag crucifix twee. Wayfarers tilde actually af aPBR&B ennui swag crucifix twee. Wayfarers tilde
-      actually af aPBR&B ennui swag crucifix twee. Wayfarers tilde actually af aPBR&B ennui swag crucifix twee.
-      Wayfarers tilde actually af aPBR&B ennui swag crucifix twee. Wayfarers tilde actually af aPBR&B ennui swag
-      crucifix twee. Wayfarers tilde actually af aPBR&B ennui swag crucifix twee. Wayfarers tilde actually af aPBR&B
-      ennui swag crucifix twee. Wayfarers tilde actually af aPBR&B ennui swag crucifix twee. Wayfarers tilde actually af
-      aPBR&B ennui swag crucifix twee. Wayfarers tilde actually af aPBR&B ennui swag crucifix twee. Wayfarers tilde
-      actually af artisan freegan you probably haven't heard of them butcher franzen distillery offal tote bag plaid.
-      Plaid squid yuccie normcore. Sustainable unicorn affogato, paleo lo-fi vinyl tattooed man braid iceland green
-      juice taxidermy hexagon aesthetic mumblecore venmo. Raw denim gastropub tbh artisan fam affogato mustache actually
-      schlitz trust fund man bun iPhone synth. Hashtag chillwave enamel pin cold-pressed photo booth meggings, 8-bit
-      leggings aesthetic schlitz. Mumblecore direct trade tousled flexitarian 8-bit swag brunch. Paleo post-ironic cloud
-      bread af twee, pour-over kitsch activated charcoal before they sold out vexillologist chambray ennui blog beard.
-      Freegan fam raclette drinking vinegar, roof party YOLO cornhole semiotics XOXO portland listicle affogato four
-      dollar toast locavore poutine. Vaporware dreamcatcher green juice wayfarers portland, hell of williamsburg 90's
-      tattooed. Ramps viral iceland, vinyl DIY wayfarers post-ironic man braid prism meggings photo booth knausgaard
-      unicorn man bun. Iceland hot chicken bicycle rights bespoke, taiyaki brunch unicorn. Selvage prism mlkshk everyday
-      carry street art.</p>
+      <mat-divider></mat-divider>
+      <button mat-raised-button>Submit</button>
+    </form>
   </div>
-
-
   <aside class="post-table-of-contents" fxFlex="1 1 30%" fxFlex.lt-sm="100%" fxFlexOrder="2" fxFlexOrder.lt-sm="1"
          fxLayout="column">
     <p class="mat-body-1">Table of contents</p>
@@ -88,4 +23,3 @@
     </mat-list>
   </aside>
 </div>
-<p class="mat-body-1">Created on December 14 of 2019 by <a href="#">Sergio</a></p>

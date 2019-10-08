@@ -18,6 +18,9 @@ import {
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {PostsRoutingModule} from '../posts/posts-routing.module';
 
+import {QuillModule} from 'ngx-quill';
+import {ReactiveFormsModule} from '@angular/forms';
+
 @NgModule({
   declarations: [PostComponent],
   imports: [
@@ -34,7 +37,9 @@ import {PostsRoutingModule} from '../posts/posts-routing.module';
     MatToolbarModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    ReactiveFormsModule,
+    QuillModule.forRoot()
   ],
   providers: []
 })
