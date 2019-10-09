@@ -1,18 +1,26 @@
 <div fxLayout="row wrap">
 
   <h1 class="mat-display-1" fxFlex="100%">Instalación de Dokku en DigitalOcean</h1>
-  <div class="post-body" fxFlex="1 1 70%" fxFlex.lt-sm="100%" fxFlexOrder="1" fxFlexOrder.lt-sm="2" fxLayout="column">
-    <form (ngSubmit)="onSubmit()" [formGroup]="editorForm">
-      <h3>Editor</h3>
-      <p class="mat-body-1">Created on December 14 of 2019 by <a href="#">Sergio</a></p>
-      <mat-divider></mat-divider>
+  <mat-tab-group fxFlex="1 1 70%" fxFlex.lt-sm="100%" fxFlexOrder="1" fxFlexOrder.lt-sm="2" fxLayout="column">
+    <mat-tab label="Short tab">
+      <div class="post-body">
+        <form (ngSubmit)="onSubmit()" [formGroup]="editorForm">
+          <h3>Editor</h3>
+          <p class="mat-body-1">Created on December 14 of 2019 by <a href="#">Sergio</a></p>
+          <mat-divider></mat-divider>
 
-      <quill-editor formControlName="editor"></quill-editor>
+          <quill-editor [modules]="config" formControlName="editor"></quill-editor>
 
-      <mat-divider></mat-divider>
-      <button mat-raised-button>Submit</button>
-    </form>
-  </div>
+          <mat-divider></mat-divider>
+          <button mat-raised-button>Submit</button>
+        </form>
+      </div>
+    </mat-tab>
+    <mat-tab label="Long tab">
+      <div [innerHTML]="htmlContent | safe: 'html'"></div>
+    </mat-tab>
+  </mat-tab-group>
+
   <aside class="post-table-of-contents" fxFlex="1 1 30%" fxFlex.lt-sm="100%" fxFlexOrder="2" fxFlexOrder.lt-sm="1"
          fxLayout="column">
     <p class="mat-body-1">Table of contents</p>
