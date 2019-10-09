@@ -24,7 +24,7 @@ import {MatListModule} from '@angular/material/list';
   declarations: [
     AppComponent,
     HomeComponent,
-    AppNavComponent
+    AppNavComponent,
   ],
   imports: [
     AppRoutingModule,
