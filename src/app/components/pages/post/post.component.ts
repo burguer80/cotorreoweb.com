@@ -1,28 +1,54 @@
-import {AfterViewChecked, Component, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.scss']
 })
-export class PostComponent implements OnInit, AfterViewChecked {
-  json = {
-    id: '4',
-    title: 'Post de prueba',
-    body: '@Component({\n  selector: \'app-post\',\n  templateUrl: \'./post.component.html\',\n  styleUrls: [\'./post.component.scss\']\n})',
-    status: '0',
-    created_at: '27/7/2019 02:30:59.797031',
-    updated_at: '27/7/2019 02:30:59.797031'
+export class PostComponent implements OnInit {
+  editorForm: FormGroup;
+  config = {
+    toolbar: [[
+      {font: []},
+      {header: [1, 2, 3, 4, 5, 6, false]},
+      {header: 1}, {header: 2},
+      'bold', 'italic', 'underline', 'strike',
+      {color: []},
+      {background: []},
+      {list: 'ordered'}, {list: 'bullet'},
+      {align: []},
+      'blockquote',
+      'code-block',
+      {indent: '-1'}, {indent: '+1'},
+      'link',
+      'image',
+      'video'
+    ]]
   };
-  markdownString = this.json.body;
+  htmlContent = null;
 
   constructor() {
   }
 
-  ngAfterViewChecked() {
+  ngOnInit() {
+    this.editorForm = new FormGroup({
+      editor: new FormControl(null)
+    });
   }
 
-  ngOnInit() {
+  onSubmit() {
+    this.updateEditorForm();
+    console.log(this.htmlContent);
+  }
+
+  tabClick(tab) {
+    this.updateEditorForm();
+    console.log(tab.index);
+  }
+
+  updateEditorForm() {
+    this.htmlContent = this.editorForm.get('editor').value;
   }
 
 }

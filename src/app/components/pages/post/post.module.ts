@@ -12,14 +12,18 @@ import {
   MatFormFieldModule,
   MatIconModule,
   MatInputModule,
-  MatListModule,
+  MatListModule, MatTabsModule,
   MatToolbarModule
 } from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {PostsRoutingModule} from '../posts/posts-routing.module';
 
+import {QuillModule} from 'ngx-quill';
+import {ReactiveFormsModule} from '@angular/forms';
+import {SafePipe} from '../../../safe.pipe';
+
 @NgModule({
-  declarations: [PostComponent],
+  declarations: [PostComponent, SafePipe],
   imports: [
     CommonModule,
     PostRoutingModule,
@@ -31,10 +35,13 @@ import {PostsRoutingModule} from '../posts/posts-routing.module';
     MatDividerModule,
     MatIconModule,
     MatListModule,
+    MatTabsModule,
     MatToolbarModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    ReactiveFormsModule,
+    QuillModule.forRoot()
   ],
   providers: []
 })
