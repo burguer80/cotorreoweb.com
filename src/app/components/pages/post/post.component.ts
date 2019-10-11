@@ -39,16 +39,13 @@ export class PostComponent implements OnInit {
 
   onSubmit() {
     this.updateEditorForm();
-    console.log(this.htmlContent);
   }
 
   tabClick(tab) {
     this.updateEditorForm();
-    console.log(tab.index);
   }
 
   updateEditorForm() {
     this.htmlContent = this.editorForm.get('editor').value;
   }
-
 }

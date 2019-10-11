@@ -1,29 +1,33 @@
 <div fxLayout="row wrap">
+  <div fxLayout="row wrap">
+    <h1 class="mat-headline">Instalación de Dokku en DigitalOcean</h1>
+    <div class="post-details mat-caption" fxFlex="100%" fxLayout="row wrap" fxLayoutAlign="start start"
+         fxLayoutGap="5px">
+      <mat-icon aria-hidden="false" aria-label="Created on December 14 of 2019">access_time</mat-icon>
+      <p fxFlexAlign="end">Created on December 14 of 2019</p>
+      <mat-icon aria-hidden="false" aria-label="Created on December 14 of 2019">person</mat-icon>
+      <p fxFlexAlign="end">Sergio</p>
+    </div>
+    <mat-divider></mat-divider>
+    <mat-tab-group (selectedTabChange)="tabClick($event)" fxFlex="1 1 70%" fxFlex.lt-sm="100%" fxFlexOrder="1"
+                   fxFlexOrder.lt-sm="2" fxLayout="column">
+      <mat-tab label="Edit">
+        <div class="post-body">
+          <form (ngSubmit)="onSubmit()" [formGroup]="editorForm">
+            <quill-editor [modules]="config" formControlName="editor"></quill-editor>
+            <mat-divider></mat-divider>
+          </form>
+        </div>
+      </mat-tab>
+      <mat-tab label="Preview">
+        <div [innerHTML]="htmlContent | safe: 'html'"></div>
+      </mat-tab>
+    </mat-tab-group>
 
-  <h1 class="mat-display-1" fxFlex="100%">Instalación de Dokku en DigitalOcean</h1>
-  <mat-tab-group (selectedTabChange)="tabClick($event)" fxFlex="1 1 70%" fxFlex.lt-sm="100%" fxFlexOrder="1"
-                 fxFlexOrder.lt-sm="2" fxLayout="column">
-    <mat-tab label="Edit">
-      <div class="post-body">
-        <form (ngSubmit)="onSubmit()" [formGroup]="editorForm">
-          <h3>Editor</h3>
-          <mat-divider></mat-divider>
-
-          <quill-editor [modules]="config" formControlName="editor"></quill-editor>
-
-          <mat-divider></mat-divider>
-        </form>
-      </div>
-    </mat-tab>
-    <mat-tab label="Preview">
-      <div [innerHTML]="htmlContent | safe: 'html'"></div>
-    </mat-tab>
-  </mat-tab-group>
-
-  <aside class="post-table-of-contents" fxFlex="1 1 30%" fxFlex.lt-sm="100%" fxFlexOrder="2" fxFlexOrder.lt-sm="1"
-         fxLayout="column">
-    <p class="mat-body-1"><b>Settings</b></p>
-    <p class="mat-body-1">Created on December 14 of 2019 by <a href="#">Sergio</a></p>
-    <button (click)="onSubmit()" mat-raised-button>Save</button>
-  </aside>
+    <aside class="post-table-of-contents" fxFlex="1 1 30%" fxFlex.lt-sm="100%" fxFlexOrder="2" fxFlexOrder.lt-sm="1"
+           fxLayout="column">
+      <p class="mat-body-1"><b>Settings</b></p>
+      <button (click)="onSubmit()" mat-raised-button>Save</button>
+    </aside>
+  </div>
 </div>
