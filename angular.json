@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/app/styles/styles-app-loading.scss",
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/app/styles/styles.scss",
               "./node_modules/quill/dist/quill.core.css",
@@ -62,6 +63,10 @@
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
                 }
               ]
             }
@@ -96,6 +101,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/app/styles/styles-app-loading.scss",
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/app/styles/styles.scss"
             ],
