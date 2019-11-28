@@ -13,12 +13,14 @@ import {
   MatFormFieldModule,
   MatInputModule,
 } from '@angular/material';
-import {HomeComponent} from './components/pages/home/home.component';
+import {HttpClientModule} from '@angular/common/http';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import {AppNavComponent} from './components/shared/app-nav/app-nav.component';
 import {LayoutModule} from '@angular/cdk/layout';
-import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
+
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {AppNavComponent} from './components/shared/app-nav/app-nav.component';
+import {HomeComponent} from './components/pages/home/home.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,7 @@ import {MatListModule} from '@angular/material/list';
     BrowserAnimationsModule,
     BrowserModule,
     FlexLayoutModule,
+    HttpClientModule,
     MatCardModule,
     MatDividerModule,
     MatIconModule,
