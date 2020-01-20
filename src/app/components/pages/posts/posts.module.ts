@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
 import {PostsRoutingModule} from './posts-routing.module';
@@ -10,10 +10,11 @@ import {
   MatDividerModule,
   MatFormFieldModule,
   MatIconModule,
-  MatInputModule,
+  MatInputModule, MatSidenavModule,
   MatToolbarModule
 } from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import {MatListModule} from '@angular/material/typings/list';
 
 @NgModule({
   declarations: [PostsComponent],
@@ -28,8 +29,10 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     MatToolbarModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
-  ]
+    MatInputModule,
+    MatSidenavModule
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class PostsModule {
 }

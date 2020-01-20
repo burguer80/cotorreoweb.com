@@ -1,6 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {ApiService} from '../../../services/api.service';
-import {Post} from '../../../models/post';
 
 @Component({
   selector: 'app-posts',
@@ -10,19 +8,9 @@ import {Post} from '../../../models/post';
 export class PostsComponent implements OnInit {
   posts = [];
 
-  constructor(private apiService: ApiService) {
+  constructor() {
   }
 
   ngOnInit() {
-    this.apiService.getPosts().subscribe((res) => {
-      res['data'].forEach(member => {
-        this.posts.push(new Post(member));
-      });
-      console.log(this.posts);
-    });
-
-    this.apiService.getPostById(3).subscribe((res) => {
-      // console.log(new Post(res['data']));
-    });
   }
 }

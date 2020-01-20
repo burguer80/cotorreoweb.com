@@ -1,6 +1,7 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {PostComponent} from './post.component';
+import {SafePipe} from '../../../safe.pipe';
 
 describe('PostComponent', () => {
   let component: PostComponent;
@@ -8,7 +9,7 @@ describe('PostComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [PostComponent]
+      declarations: [PostComponent, SafePipe]
     })
       .compileComponents();
   }));

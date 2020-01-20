@@ -8,6 +8,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 
 import {AppNavComponent} from './app-nav.component';
+import {RouterTestingModule} from '@angular/router/testing';
 
 describe('AppNavComponent', () => {
   let component: AppNavComponent;
@@ -24,6 +25,7 @@ describe('AppNavComponent', () => {
         MatListModule,
         MatSidenavModule,
         MatToolbarModule,
+        RouterTestingModule
       ]
     }).compileComponents();
   }));

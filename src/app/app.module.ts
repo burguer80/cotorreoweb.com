@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -11,7 +11,7 @@ import {
   MatToolbarModule,
   MatButtonModule,
   MatFormFieldModule,
-  MatInputModule,
+  MatInputModule, MatChipsModule,
 } from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
 import {FlexLayoutModule} from '@angular/flex-layout';
@@ -34,6 +34,7 @@ import {HomeComponent} from './components/pages/home/home.component';
     BrowserModule,
     FlexLayoutModule,
     HttpClientModule,
+    MatChipsModule,
     MatCardModule,
     MatDividerModule,
     MatIconModule,
@@ -46,7 +47,8 @@ import {HomeComponent} from './components/pages/home/home.component';
     MatListModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {
 }
