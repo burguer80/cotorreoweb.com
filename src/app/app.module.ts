@@ -11,7 +11,7 @@ import {
   MatToolbarModule,
   MatButtonModule,
   MatFormFieldModule,
-  MatInputModule,
+  MatInputModule, MatChipsModule,
 } from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
 import {FlexLayoutModule} from '@angular/flex-layout';
@@ -34,6 +34,7 @@ import {HomeComponent} from './components/pages/home/home.component';
     BrowserModule,
     FlexLayoutModule,
     HttpClientModule,
+    MatChipsModule,
     MatCardModule,
     MatDividerModule,
     MatIconModule,

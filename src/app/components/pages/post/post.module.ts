@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
 import {PostRoutingModule} from './post-routing.module';
@@ -12,7 +12,7 @@ import {
   MatFormFieldModule,
   MatIconModule,
   MatInputModule,
-  MatListModule, MatTabsModule,
+  MatListModule, MatSidenavModule, MatTabsModule,
   MatToolbarModule
 } from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
@@ -41,9 +41,11 @@ import {SafePipe} from '../../../safe.pipe';
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
+    MatSidenavModule,
     QuillModule.forRoot()
   ],
-  providers: []
+  providers: [],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class PostModule {
 }
