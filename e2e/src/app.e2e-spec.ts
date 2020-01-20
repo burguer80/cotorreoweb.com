@@ -13,6 +13,11 @@ describe('workspace-project App', () => {
     expect(page.getTitleText()).toEqual('Puro cotorreo WEB!');
   });
 
+  it('should display a button', () => {
+    page.navigateTo();
+    expect(page.getPostsButtonText()).toEqual('Ver tutoriales');
+  });
+
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser
     const logs = await browser.manage().logs().get(logging.Type.BROWSER);
