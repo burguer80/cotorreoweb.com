@@ -30,8 +30,7 @@ import {MatListModule} from '@angular/material/typings/list';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSidenavModule,
-    MatListModule
+    MatSidenavModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
