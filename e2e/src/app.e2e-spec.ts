@@ -10,7 +10,12 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to cotorreoweb!');
+    expect(page.getTitleText()).toEqual('Puro cotorreo WEB!');
+  });
+
+  it('should display a button', () => {
+    page.navigateTo();
+    expect(page.getPostsButtonText()).toEqual('Ver tutoriales');
   });
 
   afterEach(async () => {

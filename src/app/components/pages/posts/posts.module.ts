@@ -3,18 +3,17 @@ import {CommonModule} from '@angular/common';
 
 import {PostsRoutingModule} from './posts-routing.module';
 import {PostsComponent} from './posts.component';
-import {
-  MatButtonModule,
-  MatCardModule,
-  MatChipsModule,
-  MatDividerModule,
-  MatFormFieldModule,
-  MatIconModule,
-  MatInputModule, MatSidenavModule,
-  MatToolbarModule
-} from '@angular/material';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import {MatListModule} from '@angular/material/typings/list';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [PostsComponent],
@@ -30,6 +29,7 @@ import {MatListModule} from '@angular/material/typings/list';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    MatListModule,
     MatSidenavModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
