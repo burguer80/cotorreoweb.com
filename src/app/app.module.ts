@@ -20,6 +20,8 @@ import {MatListModule} from '@angular/material/list';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {AppNavComponent} from './components/shared/app-nav/app-nav.component';
 import {HomeComponent} from './components/pages/home/home.component';
+import {ServiceWorkerModule} from '@angular/service-worker';
+import {environment} from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,8 @@ import {HomeComponent} from './components/pages/home/home.component';
     MatInputModule,
     LayoutModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production})
   ],
   providers: [],
   bootstrap: [AppComponent],
