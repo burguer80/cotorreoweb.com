@@ -19,7 +19,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {PostsRoutingModule} from '../posts/posts-routing.module';
 
 import {QuillModule} from 'ngx-quill';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {SafePipe} from '../../../safe.pipe';
 
 @NgModule({
@@ -42,7 +42,8 @@ import {SafePipe} from '../../../safe.pipe';
     MatInputModule,
     ReactiveFormsModule,
     MatSidenavModule,
-    QuillModule.forRoot()
+    QuillModule.forRoot(),
+    FormsModule
   ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
+import {ActivatedRoute, Params} from '@angular/router';
+import {ApiService} from '../../../services/api.service';
+import {Post} from '../../../models/post';
 
 @Component({
   selector: 'app-post',
@@ -27,13 +30,26 @@ export class PostComponent implements OnInit {
     ]]
   };
   htmlContent = null;
+  post: Post;
 
-  constructor() {
+  constructor(
+    private route: ActivatedRoute,
+    private apiService: ApiService
+  ) {
   }
 
   ngOnInit() {
     this.editorForm = new FormGroup({
       editor: new FormControl(null)
+    });
+
+    this.route.params.subscribe((params: Params) => {
+      const id = params.id;
+      console.log(id);
+      this.apiService.getPostById(id).subscribe((post: Post) => {
+        this.post = new Post(post.data);
+        this.editorForm.get('editor').setValue(this.post.body);
+      });
     });
   }
 
@@ -46,6 +62,7 @@ export class PostComponent implements OnInit {
   }
 
   updateEditorForm() {
-    this.htmlContent = this.editorForm.get('editor').value;
+    this.post.body = this.editorForm.get('editor').value;
+    this.htmlContent = this.post.body;
   }
 }
