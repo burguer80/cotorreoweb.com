@@ -45,9 +45,8 @@ export class PostComponent implements OnInit {
 
     this.route.params.subscribe((params: Params) => {
       const id = params.id;
-      console.log(id);
       this.apiService.getPostById(id).subscribe((post: Post) => {
-        this.post = new Post(post.data);
+        this.post = post;
         this.editorForm.get('editor').setValue(this.post.body);
       });
     });

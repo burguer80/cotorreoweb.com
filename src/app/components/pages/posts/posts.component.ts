@@ -20,11 +20,10 @@ export class PostsComponent implements OnInit {
   }
 
   getPosts() {
-    this.apiService.getPosts().subscribe((res) => {
-      this.posts = res[this.key].map(post => {
+    this.apiService.getPosts().subscribe((posts) => {
+      this.posts = posts.map(post => {
         return new Post(post);
       });
-      console.log(this.posts);
     });
   }
 }
