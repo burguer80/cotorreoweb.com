@@ -1,6 +1,6 @@
 <div fxLayout="row wrap">
-  <div fxLayout="row wrap">
-    <h1 class="mat-headline">Instalación de Dokku en DigitalOcean</h1>
+  <div *ngIf="post" fxLayout="row wrap">
+    <h1 class="mat-headline">{{post.title}}</h1>
     <div class="post-details mat-caption" fxFlex="100%" fxLayout="row wrap" fxLayoutAlign="start start"
          fxLayoutGap="5px">
       <mat-icon aria-hidden="false" aria-label="Created on December 14 of 2019">access_time</mat-icon>
@@ -26,7 +26,7 @@
 
     <aside class="post-table-of-contents" fxFlex="1 1 30%" fxFlex.lt-sm="100%" fxFlexOrder="2" fxFlexOrder.lt-sm="1"
            fxLayout="column">
-      <p class="mat-body-1"><b>Settings</b></p>
+      <p class="mat-body-1"><b>Actions</b></p>
       <button (click)="onSubmit()" mat-raised-button>Save</button>
     </aside>
   </div>

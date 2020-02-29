@@ -1,13 +1,15 @@
 export class Post {
+  body?: string;
+  createdAt: string;
   id: number;
-  title: string;
-  body: string;
   status: string;
+  title: string;
 
   constructor(props) {
+    this.body = props.body;
+    this.createdAt = props.created_at;
     this.id = props.id;
-    this.body = props.attributes['body'];
-    this.title = props.attributes['title'];
-    this.status = props.attributes['status'];
+    this.title = props.title;
+    this.status = props.status;
   }
 }

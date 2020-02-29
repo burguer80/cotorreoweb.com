@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {ApiService} from '../../../services/api.service';
+import {Post} from '../../../models/post';
 
 @Component({
   selector: 'app-posts',
@@ -6,22 +8,22 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./posts.component.scss']
 })
 export class PostsComponent implements OnInit {
-  posts = [];
+  posts = new Array<Post>();
   private number: any;
+  key = 'data';
 
-  constructor() {
+  constructor(private apiService: ApiService) {
   }
 
   ngOnInit() {
+    this.getPosts();
   }
 
-  randomPhotoSrc(): string {
-    const photoId: number = this.number = this.randomInteger(1, 1);
-    return `https://i.picsum.photos/id/${photoId}/300/300.jpg`;
+  getPosts() {
+    this.apiService.getPosts().subscribe((posts) => {
+      this.posts = posts.map(post => {
+        return new Post(post);
+      });
+    });
   }
-
-  randomInteger(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
-
 }
