@@ -1,8 +1,8 @@
 <app-app-nav>
   <div class="container">
-    <router-outlet>
+    <router-outlet (activate)="onRouterOutletActivate($event)">
     </router-outlet>
-    <app-loading></app-loading>
+    <app-loading *ngIf="!isRouterOutletActive"></app-loading>
   </div>
 </app-app-nav>
 
