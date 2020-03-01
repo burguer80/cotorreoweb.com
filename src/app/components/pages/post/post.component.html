@@ -1,3 +1,4 @@
+<app-loading *ngIf="!post"></app-loading>
 <div fxLayout="row wrap">
   <div *ngIf="post" fxLayout="row wrap">
     <h1 class="mat-headline">{{post.title}}</h1>
