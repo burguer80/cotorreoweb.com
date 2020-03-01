@@ -14,6 +14,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {MatListModule} from '@angular/material/list';
+import {LoadingModule} from '../../shared/loading/loading.module';
 
 @NgModule({
   declarations: [PostsComponent],
@@ -21,6 +22,7 @@ import {MatListModule} from '@angular/material/list';
     CommonModule,
     PostsRoutingModule,
     FlexLayoutModule,
+    LoadingModule,
     MatCardModule,
     MatChipsModule,
     MatDividerModule,

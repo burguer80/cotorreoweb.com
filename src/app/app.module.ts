@@ -22,12 +22,13 @@ import {AppNavComponent} from './components/shared/app-nav/app-nav.component';
 import {HomeComponent} from './components/pages/home/home.component';
 import {ServiceWorkerModule} from '@angular/service-worker';
 import {environment} from '../environments/environment';
+import {LoadingModule} from './components/shared/loading/loading.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     AppNavComponent,
+    HomeComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -35,6 +36,8 @@ import {environment} from '../environments/environment';
     BrowserModule,
     FlexLayoutModule,
     HttpClientModule,
+    LayoutModule,
+    LoadingModule,
     MatChipsModule,
     MatCardModule,
     MatDividerModule,
@@ -43,7 +46,6 @@ import {environment} from '../environments/environment';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    LayoutModule,
     MatSidenavModule,
     MatListModule,
     ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production})

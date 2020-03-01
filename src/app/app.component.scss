@@ -1,0 +1,7 @@
+app-loading {
+  display: none;
+}
+
+router-outlet + app-loading {
+  display: block;
+}

@@ -21,15 +21,17 @@ import {PostsRoutingModule} from '../posts/posts-routing.module';
 import {QuillModule} from 'ngx-quill';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {SafePipe} from '../../../safe.pipe';
+import {LoadingModule} from '../../shared/loading/loading.module';
 
 @NgModule({
   declarations: [PostComponent, SafePipe],
   imports: [
     CommonModule,
     PostRoutingModule,
-    CommonModule,
     PostsRoutingModule,
     FlexLayoutModule,
+    FormsModule,
+    LoadingModule,
     MatCardModule,
     MatChipsModule,
     MatDividerModule,
@@ -40,10 +42,9 @@ import {SafePipe} from '../../../safe.pipe';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    ReactiveFormsModule,
     MatSidenavModule,
+    ReactiveFormsModule,
     QuillModule.forRoot(),
-    FormsModule
   ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
