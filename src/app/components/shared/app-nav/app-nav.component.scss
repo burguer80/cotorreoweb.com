@@ -10,6 +10,13 @@
   background: inherit;
 }
 
+.offline-chip {
+  background-color: tomato;
+  color: white;
+  font-size: 12px;
+  font-weight: normal;
+}
+
 .mat-toolbar.mat-primary {
   position: sticky;
   height: 60px;

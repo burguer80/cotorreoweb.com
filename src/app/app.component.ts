@@ -10,16 +10,11 @@ import {IsOnlineStoreService} from './services/is-online-store.service';
 export class AppComponent implements OnInit, OnDestroy {
   subscriptions: Subscription[] = [];
   isRouterOutletActive = false;
-  isOnline = false;
 
   constructor(private onlineStatusStoreService: IsOnlineStoreService) {
   }
 
   ngOnInit(): void {
-    this.subscriptions.push(this.onlineStatusStoreService.status.subscribe(status => {
-      this.isOnline = status;
-    }));
-
     this.subscriptions.push(this.onlineStatusStoreService.onlineEvent.subscribe(event => {
       this.onlineStatusStoreService.setOnline();
     }));

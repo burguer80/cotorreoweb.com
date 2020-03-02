@@ -19,7 +19,11 @@
       <img alt="Logo CotorreoWeb" height="30" src="../../../../assets/images/logo_black.svg"
            width="30">
       <div (click)="goHome()">
-        Cotorreo<strong>WEB</strong>
+
+        <mat-chip-list>
+          Cotorreo<strong>WEB</strong>
+          <mat-chip *ngIf="!isOnline" class="offline-chip">Offline</mat-chip>
+        </mat-chip-list>
       </div>
       <span class="fill-remaining-space"></span>
       <mat-nav-list fxHide.lt-sm fxLayout="row">
