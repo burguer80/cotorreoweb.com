@@ -8,13 +8,9 @@ export class IsOnlineStoreService {
   offlineEvent: Observable<Event> = fromEvent(window, 'offline');
   onlineEvent: Observable<Event> = fromEvent(window, 'online');
   private isOnline = new BehaviorSubject<boolean>(true);
-  status = this.isOnline.asObservable();
+  status: Observable<boolean> = this.isOnline.asObservable();
 
   constructor() {
-  }
-
-  updateIsOnlineStatus(status: boolean) {
-    this.isOnline.next(status);
   }
 
   setOffline() {
@@ -23,5 +19,9 @@ export class IsOnlineStoreService {
 
   setOnline() {
     this.updateIsOnlineStatus(true);
+  }
+
+  private updateIsOnlineStatus(status: boolean) {
+    this.isOnline.next(status);
   }
 }
