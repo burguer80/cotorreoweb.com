@@ -31,6 +31,12 @@ export class AppNavComponent implements OnInit, OnDestroy {
     this.subscriptions.push(this.onlineStatusStoreService.status.subscribe(status => {
       this.isOnline = status;
     }));
+    this.subscriptions.push(this.onlineStatusStoreService.onlineEvent.subscribe(event => {
+      this.onlineStatusStoreService.setOnline();
+    }));
+    this.subscriptions.push(this.onlineStatusStoreService.offlineEvent.subscribe(e => {
+      this.onlineStatusStoreService.setOffline();
+    }));
   }
 
   ngOnDestroy(): void {
