@@ -8,7 +8,10 @@ import {Component} from '@angular/core';
 export class AppComponent {
   isRouterOutletActive = false;
 
-  public onRouterOutletActivate(event: any): void {
+  constructor() {
+  }
+
+  onRouterOutletActivate(event: any): void {
     this.isRouterOutletActive = true;
   }
 }

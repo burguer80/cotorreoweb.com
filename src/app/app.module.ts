@@ -23,6 +23,7 @@ import {HomeComponent} from './components/pages/home/home.component';
 import {ServiceWorkerModule} from '@angular/service-worker';
 import {environment} from '../environments/environment';
 import {LoadingModule} from './components/shared/loading/loading.module';
+import {MatBadgeModule} from '@angular/material/badge';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import {LoadingModule} from './components/shared/loading/loading.module';
     HttpClientModule,
     LayoutModule,
     LoadingModule,
+    MatBadgeModule,
     MatChipsModule,
     MatCardModule,
     MatDividerModule,

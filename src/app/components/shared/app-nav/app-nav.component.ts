@@ -1,15 +1,18 @@
-import {Component} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
-import {Observable} from 'rxjs';
+import {Observable, Subscription} from 'rxjs';
 import {map, share} from 'rxjs/operators';
 import {Router} from '@angular/router';
+import {IsOnlineStoreService} from '../../../services/is-online-store.service';
 
 @Component({
   selector: 'app-app-nav',
   templateUrl: './app-nav.component.html',
   styleUrls: ['./app-nav.component.scss']
 })
-export class AppNavComponent {
+export class AppNavComponent implements OnInit, OnDestroy {
+  subscriptions: Subscription[] = [];
+  isOnline = true;
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -17,7 +20,27 @@ export class AppNavComponent {
       share()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver, private router: Router) {
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private onlineStatusStoreService: IsOnlineStoreService,
+    private router: Router
+  ) {
+  }
+
+  ngOnInit() {
+    this.subscriptions.push(this.onlineStatusStoreService.status.subscribe(status => {
+      this.isOnline = status;
+    }));
+    this.subscriptions.push(this.onlineStatusStoreService.onlineEvent.subscribe(event => {
+      this.onlineStatusStoreService.setOnline();
+    }));
+    this.subscriptions.push(this.onlineStatusStoreService.offlineEvent.subscribe(e => {
+      this.onlineStatusStoreService.setOffline();
+    }));
+  }
+
+  ngOnDestroy(): void {
+    this.subscriptions.forEach(subscription => subscription.unsubscribe());
   }
 
   goHome() {
