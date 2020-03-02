@@ -11,7 +11,7 @@
       <mat-card-title [routerLink]="'/posts/' + post.id">{{post.title}}n</mat-card-title>
       <mat-card-subtitle>{{post.createdAt | date}}</mat-card-subtitle>
     </mat-card-header>
-    <img alt="Photo of a Shiba Inu" mat-card-image src="https://i.picsum.photos/id/15/200/100.jpg">
+    <img *ngIf="isOnline" alt="Photo of a Shiba Inu" mat-card-image src="https://i.picsum.photos/id/15/200/100.jpg">
     <mat-card-content>
       <p>
         <!--        This is a wider card with supporting text below as a natural lead-in-->

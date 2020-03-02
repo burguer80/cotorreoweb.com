@@ -3,6 +3,7 @@ import {ApiService} from '../../../services/api.service';
 import {Post} from '../../../models/post';
 import {Subscription} from 'rxjs';
 import {PostsStoreService} from '../../../services/posts-store.service';
+import {IsOnlineStoreService} from '../../../services/is-online-store.service';
 
 @Component({
   selector: 'app-posts',
@@ -13,15 +14,20 @@ export class PostsComponent implements OnInit, OnDestroy {
   posts = new Array<Post>();
   private number: any;
   key = 'data';
+  isOnline = true;
   subscriptions: Subscription[] = [];
 
   constructor(
     private apiService: ApiService,
-    private postsStoreService: PostsStoreService
+    private postsStoreService: PostsStoreService,
+    private onlineStatusStoreService: IsOnlineStoreService
   ) {
   }
 
   ngOnInit() {
+    this.subscriptions.push(this.onlineStatusStoreService.status.subscribe(status => {
+      this.isOnline = status;
+    }));
     this.subscriptions.push(this.postsStoreService.posts$.subscribe(posts => {
       this.posts = posts;
     }));
@@ -40,5 +46,6 @@ export class PostsComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.subscriptions.forEach(subscription => subscription.unsubscribe());
   }
+
 
 }
