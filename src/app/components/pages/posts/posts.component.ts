@@ -29,12 +29,12 @@ export class PostsComponent implements OnInit, OnDestroy {
   }
 
   getPosts() {
-    this.apiService.getPosts().subscribe((posts) => {
+    this.subscriptions.push(this.apiService.getPosts().subscribe((posts) => {
       const newPosts = posts.map(post => {
         return new Post(post);
       });
       this.postsStoreService.updatePosts(newPosts);
-    });
+    }, err => console.log('HTTP Error', err)));
   }
 
   ngOnDestroy(): void {
