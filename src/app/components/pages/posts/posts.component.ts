@@ -34,7 +34,7 @@ export class PostsComponent implements OnInit, OnDestroy {
         return new Post(post);
       });
       this.postsStoreService.updatePosts(newPosts);
-    }, err => console.log('HTTP Error', err)));
+    }, err => console.log('Posts Component Error', err)));
   }
 
   ngOnDestroy(): void {
