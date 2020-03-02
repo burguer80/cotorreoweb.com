@@ -1,4 +1,7 @@
 <app-app-nav>
+  <div *ngIf="!isOnline" class="offline-notification">
+    No internet connection
+  </div>
   <div class="container">
     <router-outlet (activate)="onRouterOutletActivate($event)">
     </router-outlet>
